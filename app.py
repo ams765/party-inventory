@@ -3,6 +3,12 @@ import discord
 from discord.ext import commands
 import sqlite3
 from functions import *
+import json
+
+with open("env.json", "r") as file:
+    env_keys = json.load(file)
+
+    bot_token = env_keys.get("botToken")
 
 # Intents configuration for the bot
 intents = discord.Intents.default()
@@ -46,4 +52,4 @@ bot.add_command(updateCategory)
 bot.event(on_ready)
 
 # Start the bot
-bot.run('MTE1NTk5NTg2NjgxODE1NDU3Ng.GpdvM-.Z3Q54xR3Jwz6h-l_SpocXJxVTDKS-qhmlVnids') 
+bot.run('bot_token') 
