@@ -9,6 +9,7 @@ with open("env.json", "r") as file:
     env_keys = json.load(file)
 
     bot_token = env_keys.get("botToken")
+    print(bot_token)
 
 # Intents configuration for the bot
 intents = discord.Intents.default()
@@ -52,4 +53,4 @@ bot.add_command(updateCategory)
 bot.event(on_ready)
 
 # Start the bot
-bot.run('bot_token') 
+bot.run(bot_token) 
