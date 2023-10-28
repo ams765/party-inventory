@@ -1,15 +1,12 @@
 # Import required modules
-import discord
+import discord, os, sqlite3, json
 from discord.ext import commands
-import sqlite3
+from dotenv import load_dotenv
 from functions import *
-import json
 
-with open("env.json", "r") as file:
-    env_keys = json.load(file)
+load_dotenv()
 
-    bot_token = env_keys.get("botToken")
-    print(bot_token)
+bot_token = os.getenv("BOT_TOKEN")
 
 # Intents configuration for the bot
 intents = discord.Intents.default()
